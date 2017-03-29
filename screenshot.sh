@@ -1,5 +1,6 @@
 #!/bin/bash
-. ./settings.sh
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+. $DIR/settings.sh
 
 # Output a fatal error message and exit
 # Parameters: Error message to show, and error code to return
@@ -20,9 +21,9 @@ sleep 1
 # Take screenshot via scrot
 scrot -d 1 -s -b "$filePath" || fatalError "Could not create screenshot" 2
 
-sftp $user@$host << EOF
-mkdir /$subDir
-cd /$subDir
+sftp -P $port $user@$host << EOF
+mkdir $subDir
+cd $subDir
 put $filePath $fileName
 bye
 EOF

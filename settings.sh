@@ -1,10 +1,10 @@
 #!/bin/bash
 
-ftpHost="example.com"
-ftpUser="username"
-ftpPass="password"
-baseUrl="http://example.com/"
+host="cohesiondigital.co.uk"
+port=2222
+user="sandorsftp"
+baseUrl="http://www.cohesiondigital.co.uk/ss/sandor/"
 
-baseDir="/home/daniel/screenshots/"
-subDirFormat="%Y/%m/"
+baseDir="/home/sandor/Pictures/"
+subDirFormat="%Y-%m/"
 filenameFormat="%d-%H.%M.%S.png"
